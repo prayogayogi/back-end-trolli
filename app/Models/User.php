@@ -59,4 +59,10 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    // Relasi ke model transaction
+    public function transaction()
+    {
+        $this->hasMany(Transaction::class, "user_id", "id");
+    }
 }

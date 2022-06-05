@@ -79,4 +79,11 @@ class UserController extends Controller
             ], "Authenticated Failde", 500);
         }
     }
+
+    // Logout
+    public function logout(Request $request)
+    {
+        $token = $request->user()->currentAccessToken()->delete();
+        return ResponseFormatter::success($token, "Token revoked");
+    }
 }
