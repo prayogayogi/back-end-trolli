@@ -1,8 +1,7 @@
-{{--Extend css--}}
-<link rel="shortcut icon" type="image/png" href="{{asset("assets/images/favicon.png")}}">
-<link href="{{ asset("assets/vendor/jquery-nice-select/css/nice-select.css") }}" rel="stylesheet">
-<link href="{{ asset("assets/vendor/owl-carousel/owl.carousel.css") }}" rel="stylesheet">
-<link rel="stylesheet" href="{{ asset("assets/vendor/nouislider/nouislider.min.css") }}">
+{{-- Include Style --}}
+<link rel="stylesheet" href="{{ asset("assets/dist/assets/css/bootstrap.css") }}">
+<link rel="stylesheet" href="{{ asset("assets/dist/assets/vendors/chartjs/Chart.min.css") }}">
 
-<!-- Style css -->
-<link href="{{ asset("assets/css/style.css") }}" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset("assets/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.css") }}">
+<link rel="stylesheet" href="{{ asset("assets/dist/assets/css/app.css") }}">
+<link rel="shortcut icon" href="{{ asset("assets/dist/assets/images/favicon.svg") }}" type="image/x-icon">

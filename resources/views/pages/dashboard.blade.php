@@ -4,494 +4,193 @@
     Dashboard
 @endsection
 
-@section('section')
-<div class="page-wrapper">
-    <div class="page-content">
-        <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
-            <div class="col">
-                <div class="card radius-10">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <p class="mb-0 text-secondary">Revenue</p>
-                                <h4 class="my-1">$4805</h4>
-                                <p class="mb-0 font-13 text-success"><i class='bx bxs-up-arrow align-middle'></i>$34 Since last week</p>
+@section('content')
+
+<div class="main-content container-fluid">
+    <div class="page-title">
+        <h3>Dashboard</h3>
+        <p class="text-subtitle text-muted">A good dashboard to display your statistics</p>
+    </div>
+    <section class="section">
+        <div class="row mb-2">
+            <div class="col-12 col-md-3">
+                <div class="card card-statistic">
+                    <div class="card-body p-0">
+                        <div class="d-flex flex-column">
+                            <div class='px-3 py-3 d-flex justify-content-between'>
+                                <h3 class='card-title'>BALANCE</h3>
+                                <div class="card-right d-flex align-items-center">
+                                    <p>$50 </p>
+                                </div>
                             </div>
-                            <div class="widgets-icons bg-light-success text-success ms-auto"><i class='bx bxs-wallet'></i>
+                            <div class="chart-wrapper">
+                                <canvas id="canvas1" style="height:100px !important"></canvas>
                             </div>
                         </div>
-                        <div id="chart1"></div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card radius-10">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <p class="mb-0 text-secondary">Total Customers</p>
-                                <h4 class="my-1">8.4K</h4>
-                                <p class="mb-0 font-13 text-success"><i class='bx bxs-up-arrow align-middle'></i>14% Since last week</p>
+            <div class="col-12 col-md-3">
+                <div class="card card-statistic">
+                    <div class="card-body p-0">
+                        <div class="d-flex flex-column">
+                            <div class='px-3 py-3 d-flex justify-content-between'>
+                                <h3 class='card-title'>Revenue</h3>
+                                <div class="card-right d-flex align-items-center">
+                                    <p>$532,2 </p>
+                                </div>
                             </div>
-                            <div class="widgets-icons bg-light-warning text-warning ms-auto"><i class='bx bxs-group'></i>
+                            <div class="chart-wrapper">
+                                <canvas id="canvas2" style="height:100px !important"></canvas>
                             </div>
                         </div>
-                        <div id="chart2"></div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card radius-10">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <p class="mb-0 text-secondary">Store Visitors</p>
-                                <h4 class="my-1">59K</h4>
-                                <p class="mb-0 font-13 text-danger"><i class='bx bxs-down-arrow align-middle'></i>12.4% Since last week</p>
+            <div class="col-12 col-md-3">
+                <div class="card card-statistic">
+                    <div class="card-body p-0">
+                        <div class="d-flex flex-column">
+                            <div class='px-3 py-3 d-flex justify-content-between'>
+                                <h3 class='card-title'>ORDERS</h3>
+                                <div class="card-right d-flex align-items-center">
+                                    <p>1,544 </p>
+                                </div>
                             </div>
-                            <div class="widgets-icons bg-light-danger text-danger ms-auto"><i class='bx bxs-binoculars'></i>
+                            <div class="chart-wrapper">
+                                <canvas id="canvas3" style="height:100px !important"></canvas>
                             </div>
                         </div>
-                        <div id="chart3"></div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!--end row-->
-        <div class="row row-cols-1 row-cols-xl-2">
-            <div class="col d-flex">
-                <div class="card radius-10 w-100">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <h5 class="mb-1">Store Metrics</h5>
-                                <p class="mb-0 font-13 text-secondary"><i class='bx bxs-calendar'></i>in last 30 days revenue</p>
-                            </div>
-                            <div class="font-22 ms-auto"><i class='bx bx-dots-horizontal-rounded'></i>
-                            </div>
-                        </div>
-                        <div class="row row-cols-1 row-cols-sm-3 mt-4">
-                            <div class="col">
-                                <div>
-                                    <p class="mb-0 text-secondary">Revenue</p>
-                                    <h4 class="my-1">$4805</h4>
-                                    <p class="mb-0 font-13 text-success"><i class='bx bxs-up-arrow align-middle'></i>$1458 Since last month</p>
+            <div class="col-12 col-md-3">
+                <div class="card card-statistic">
+                    <div class="card-body p-0">
+                        <div class="d-flex flex-column">
+                            <div class='px-3 py-3 d-flex justify-content-between'>
+                                <h3 class='card-title'>Sales Today</h3>
+                                <div class="card-right d-flex align-items-center">
+                                    <p>423 </p>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div>
-                                    <p class="mb-0 text-secondary">Total Customers</p>
-                                    <h4 class="my-1">8.4K</h4>
-                                    <p class="mb-0 font-13 text-success"><i class='bx bxs-up-arrow align-middle'></i>12.3% Since last month</p>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div>
-                                    <p class="mb-0 text-secondary">Store Visitors</p>
-                                    <h4 class="my-1">59K</h4>
-                                    <p class="mb-0 font-13 text-danger"><i class='bx bxs-down-arrow align-middle'></i>2.4% Since last month</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="chart4"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col d-flex">
-                <div class="card radius-10 w-100">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <h5 class="mb-1">Top Products</h5>
-                                <p class="mb-0 font-13 text-secondary"><i class='bx bxs-calendar'></i>in last 30 days revenue</p>
-                            </div>
-                            <div class="font-22 ms-auto"><i class='bx bx-dots-horizontal-rounded'></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-list p-3 mb-3">
-                        <div class="row border mx-0 mb-3 py-2 radius-10 cursor-pointer">
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="product-img">
-                                        <img src="assets/images/icons/chair.png" alt="" />
-                                    </div>
-                                    <div class="ms-2">
-                                        <h6 class="mb-1">Light Blue Chair</h6>
-                                        <p class="mb-0">$240.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm">
-                                <h6 class="mb-1">$2140.00</h6>
-                                <p class="mb-0">345 Sales</p>
-                            </div>
-                            <div class="col-sm">
-                                <div id="chart5"></div>
-                            </div>
-                        </div>
-                        <div class="row border mx-0 mb-3 py-2 radius-10 cursor-pointer">
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="product-img">
-                                        <img src="assets/images/icons/user-interface.png" alt="" />
-                                    </div>
-                                    <div class="ms-2">
-                                        <h6 class="mb-1">Honor Mobile 7x</h6>
-                                        <p class="mb-0">$159.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm">
-                                <h6 class="mb-1">$3570.00</h6>
-                                <p class="mb-0">148 Sales</p>
-                            </div>
-                            <div class="col-sm">
-                                <div id="chart6"></div>
-                            </div>
-                        </div>
-                        <div class="row border mx-0 mb-3 py-2 radius-10 cursor-pointer">
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="product-img">
-                                        <img src="assets/images/icons/watch.png" alt="" />
-                                    </div>
-                                    <div class="ms-2">
-                                        <h6 class="mb-1">Hand Watch</h6>
-                                        <p class="mb-0">$250.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm">
-                                <h6 class="mb-1">$3650.00</h6>
-                                <p class="mb-0">122 Sales</p>
-                            </div>
-                            <div class="col-sm">
-                                <div id="chart7"></div>
-                            </div>
-                        </div>
-                        <div class="row border mx-0 mb-3 py-2 radius-10 cursor-pointer">
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="product-img">
-                                        <img src="assets/images/icons/idea.png" alt="" />
-                                    </div>
-                                    <div class="ms-2">
-                                        <h6 class="mb-1">Mini Laptop</h6>
-                                        <p class="mb-0">$260.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm">
-                                <h6 class="mb-1">$6320.00</h6>
-                                <p class="mb-0">452 Sales</p>
-                            </div>
-                            <div class="col-sm">
-                                <div id="chart8"></div>
-                            </div>
-                        </div>
-                        <div class="row border mx-0 mb-3 py-2 radius-10 cursor-pointer">
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="product-img">
-                                        <img src="assets/images/icons/tshirt.png" alt="" />
-                                    </div>
-                                    <div class="ms-2">
-                                        <h6 class="mb-1">Slim-T-Shirt</h6>
-                                        <p class="mb-0">$112.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm">
-                                <h6 class="mb-1">$2360.00</h6>
-                                <p class="mb-0">572 Sales</p>
-                            </div>
-                            <div class="col-sm">
-                                <div id="chart9"></div>
-                            </div>
-                        </div>
-                        <div class="row border mx-0 mb-3 py-2 radius-10 cursor-pointer">
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="product-img">
-                                        <img src="assets/images/icons/headphones.png" alt="" />
-                                    </div>
-                                    <div class="ms-2">
-                                        <h6 class="mb-1">Smart Headphones</h6>
-                                        <p class="mb-0">$360.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm">
-                                <h6 class="mb-1">$9840.00</h6>
-                                <p class="mb-0">275 Sales</p>
-                            </div>
-                            <div class="col-sm">
-                                <div id="chart10"></div>
-                            </div>
-                        </div>
-                        <div class="row border mx-0 py-2 radius-10 cursor-pointer">
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="product-img">
-                                        <img src="assets/images/icons/shoes.png" alt="" />
-                                    </div>
-                                    <div class="ms-2">
-                                        <h6 class="mb-1">Green Sports Shoes</h6>
-                                        <p class="mb-0">$410.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm">
-                                <h6 class="mb-1">$3840.00</h6>
-                                <p class="mb-0">265 Sales</p>
-                            </div>
-                            <div class="col-sm">
-                                <div id="chart11"></div>
+                            <div class="chart-wrapper">
+                                <canvas id="canvas4" style="height:100px !important"></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--end row-->
-        <div class="row">
-            <div class="col-xl-8 d-flex">
-                <div class="card radius-10 w-100">
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class='card-heading p-1 pl-3'>Sales</h3>
+                    </div>
                     <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div>
-                                <h5 class="mb-1">Transaction History</h5>
-                                <p class="mb-0 font-13 text-secondary"><i class='bx bxs-calendar'></i>in last 30 days revenue</p>
+                        <div class="row">
+                            <div class="col-md-4 col-12">
+                                <div class="pl-3">
+                                    <h1 class='mt-5'>$21,102</h1>
+                                    <p class='text-xs'><span class="text-green"><i data-feather="bar-chart" width="15"></i> +19%</span> than last month</p>
+                                    <div class="legends">
+                                        <div class="legend d-flex flex-row align-items-center">
+                                            <div class='w-3 h-3 rounded-full bg-info mr-2'></div><span class='text-xs'>Last Month</span>
+                                        </div>
+                                        <div class="legend d-flex flex-row align-items-center">
+                                            <div class='w-3 h-3 rounded-full bg-blue mr-2'></div><span class='text-xs'>Current Month</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="font-22 ms-auto"><i class='bx bx-dots-horizontal-rounded'></i>
+                            <div class="col-md-8 col-12">
+                                <canvas id="bar"></canvas>
                             </div>
                         </div>
-                        <div class="table-responsive mt-4">
-                            <table class="table align-middle mb-0 table-hover" id="Transaction-History">
-                                <thead class="table-light">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h4 class="card-title">Orders Today</h4>
+                        <div class="d-flex ">
+                            <i data-feather="download"></i>
+                        </div>
+                    </div>
+                    <div class="card-body px-0 pb-0">
+                        <div class="table-responsive">
+                            <table class='table mb-0' id="table1">
+                                <thead>
                                     <tr>
-                                        <th>Payment Name</th>
-                                        <th>Date & Time</th>
-                                        <th>Amount</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>City</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
+                                        <td>Graiden</td>
+                                        <td>vehicula.aliquet@semconsequat.co.uk</td>
+                                        <td>076 4820 8838</td>
+                                        <td>Offenburg</td>
                                         <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="">
-                                                    <img src="assets/images/avatars/avatar-1.png" class="rounded-circle" width="46" height="46" alt="" />
-                                                </div>
-                                                <div class="ms-2">
-                                                    <h6 class="mb-1 font-14">Payment from Michle Jhon</h6>
-                                                    <p class="mb-0 font-13 text-secondary">Refrence Id #8547846</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>Jan 10, 2021</td>
-                                        <td>+256.00</td>
-                                        <td>
-                                            <div class="badge rounded-pill bg-success w-100">Completed</div>
+                                            <span class="badge bg-success">Active</span>
                                         </td>
                                     </tr>
                                     <tr>
+                                        <td>Dale</td>
+                                        <td>fringilla.euismod.enim@quam.ca</td>
+                                        <td>0500 527693</td>
+                                        <td>New Quay</td>
                                         <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="">
-                                                    <img src="assets/images/avatars/avatar-2.png" class="rounded-circle" width="46" height="46" alt="" />
-                                                </div>
-                                                <div class="ms-2">
-                                                    <h6 class="mb-1 font-14">Payment from Pauline Bird</h6>
-                                                    <p class="mb-0 font-13 text-secondary">Refrence Id #9653248</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>Jan 12, 2021</td>
-                                        <td>+566.00</td>
-                                        <td>
-                                            <div class="badge rounded-pill bg-info text-dark w-100">In Progress</div>
+                                            <span class="badge bg-success">Active</span>
                                         </td>
                                     </tr>
                                     <tr>
+                                        <td>Nathaniel</td>
+                                        <td>mi.Duis@diam.edu</td>
+                                        <td>(012165) 76278</td>
+                                        <td>Grumo Appula</td>
                                         <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="">
-                                                    <img src="assets/images/avatars/avatar-3.png" class="rounded-circle" width="46" height="46" alt="" />
-                                                </div>
-                                                <div class="ms-2">
-                                                    <h6 class="mb-1 font-14">Payment from Ralph Alva</h6>
-                                                    <p class="mb-0 font-13 text-secondary">Refrence Id #7689524</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>Jan 14, 2021</td>
-                                        <td>+636.00</td>
-                                        <td>
-                                            <div class="badge rounded-pill bg-danger w-100">Declined</div>
+                                            <span class="badge bg-danger">Inactive</span>
                                         </td>
                                     </tr>
                                     <tr>
+                                        <td>Darius</td>
+                                        <td>velit@nec.com</td>
+                                        <td>0309 690 7871</td>
+                                        <td>Ways</td>
                                         <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="">
-                                                    <img src="assets/images/avatars/avatar-4.png" class="rounded-circle" width="46" height="46" alt="" />
-                                                </div>
-                                                <div class="ms-2">
-                                                    <h6 class="mb-1 font-14">Payment from John Roman</h6>
-                                                    <p class="mb-0 font-13 text-secondary">Refrence Id #8335884</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>Jan 15, 2021</td>
-                                        <td>+246.00</td>
-                                        <td>
-                                            <div class="badge rounded-pill bg-success w-100">Completed</div>
+                                            <span class="badge bg-success">Active</span>
                                         </td>
                                     </tr>
                                     <tr>
+                                        <td>Ganteng</td>
+                                        <td>velit@nec.com</td>
+                                        <td>0309 690 7871</td>
+                                        <td>Ways</td>
                                         <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="">
-                                                    <img src="assets/images/avatars/avatar-7.png" class="rounded-circle" width="46" height="46" alt="" />
-                                                </div>
-                                                <div class="ms-2">
-                                                    <h6 class="mb-1 font-14">Payment from David Buckley</h6>
-                                                    <p class="mb-0 font-13 text-secondary">Refrence Id #7865986</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>Jan 16, 2021</td>
-                                        <td>+876.00</td>
-                                        <td>
-                                            <div class="badge rounded-pill bg-info text-dark w-100">In Progress</div>
+                                            <span class="badge bg-success">Active</span>
                                         </td>
                                     </tr>
                                     <tr>
+                                        <td>Oleg</td>
+                                        <td>rhoncus.id@Aliquamauctorvelit.net</td>
+                                        <td>0500 441046</td>
+                                        <td>Rossignol</td>
                                         <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="">
-                                                    <img src="assets/images/avatars/avatar-8.png" class="rounded-circle" width="46" height="46" alt="" />
-                                                </div>
-                                                <div class="ms-2">
-                                                    <h6 class="mb-1 font-14">Payment from Lewis Cruz</h6>
-                                                    <p class="mb-0 font-13 text-secondary">Refrence Id #8576420</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>Jan 18, 2021</td>
-                                        <td>+536.00</td>
-                                        <td>
-                                            <div class="badge rounded-pill bg-success w-100">Completed</div>
+                                            <span class="badge bg-success">Active</span>
                                         </td>
                                     </tr>
                                     <tr>
+                                        <td>Kermit</td>
+                                        <td>diam.Sed.diam@anteVivamusnon.org</td>
+                                        <td>(01653) 27844</td>
+                                        <td>Patna</td>
                                         <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="">
-                                                    <img src="assets/images/avatars/avatar-9.png" class="rounded-circle" width="46" height="46" alt="" />
-                                                </div>
-                                                <div class="ms-2">
-                                                    <h6 class="mb-1 font-14">Payment from James Caviness</h6>
-                                                    <p class="mb-0 font-13 text-secondary">Refrence Id #3775420</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>Jan 18, 2021</td>
-                                        <td>+536.00</td>
-                                        <td>
-                                            <div class="badge rounded-pill bg-success w-100">Completed</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="">
-                                                    <img src="assets/images/avatars/avatar-10.png" class="rounded-circle" width="46" height="46" alt="" />
-                                                </div>
-                                                <div class="ms-2">
-                                                    <h6 class="mb-1 font-14">Payment from Peter Costanzo</h6>
-                                                    <p class="mb-0 font-13 text-secondary">Refrence Id #3768920</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>Jan 19, 2021</td>
-                                        <td>+536.00</td>
-                                        <td>
-                                            <div class="badge rounded-pill bg-success w-100">Completed</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="">
-                                                    <img src="assets/images/avatars/avatar-11.png" class="rounded-circle" width="46" height="46" alt="" />
-                                                </div>
-                                                <div class="ms-2">
-                                                    <h6 class="mb-1 font-14">Payment from Johnny Seitz</h6>
-                                                    <p class="mb-0 font-13 text-secondary">Refrence Id #9673520</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>Jan 20, 2021</td>
-                                        <td>+86.00</td>
-                                        <td>
-                                            <div class="badge rounded-pill bg-danger w-100">Declined</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="">
-                                                    <img src="assets/images/avatars/avatar-12.png" class="rounded-circle" width="46" height="46" alt="" />
-                                                </div>
-                                                <div class="ms-2">
-                                                    <h6 class="mb-1 font-14">Payment from Lewis Cruz</h6>
-                                                    <p class="mb-0 font-13 text-secondary">Refrence Id #8576420</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>Jan 18, 2021</td>
-                                        <td>+536.00</td>
-                                        <td>
-                                            <div class="badge rounded-pill bg-success w-100">Completed</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="">
-                                                    <img src="assets/images/avatars/avatar-13.png" class="rounded-circle" width="46" height="46" alt="" />
-                                                </div>
-                                                <div class="ms-2">
-                                                    <h6 class="mb-1 font-14">Payment from David Buckley</h6>
-                                                    <p class="mb-0 font-13 text-secondary">Refrence Id #8576420</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>Jan 22, 2021</td>
-                                        <td>+854.00</td>
-                                        <td>
-                                            <div class="badge rounded-pill bg-info text-dark w-100">In Progress</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="">
-                                                    <img src="assets/images/avatars/avatar-14.png" class="rounded-circle" width="46" height="46" alt="" />
-                                                </div>
-                                                <div class="ms-2">
-                                                    <h6 class="mb-1 font-14">Payment from Thomas Wheeler</h6>
-                                                    <p class="mb-0 font-13 text-secondary">Refrence Id #4278620</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>Jan 18, 2021</td>
-                                        <td>+536.00</td>
-                                        <td>
-                                            <div class="badge rounded-pill bg-success w-100">Completed</div>
+                                            <span class="badge bg-success">Active</span>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -500,56 +199,84 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4">
-                <div class="card radius-10 overflow-hidden">
+            <div class="col-md-4">
+                <div class="card ">
+                    <div class="card-header">
+                        <h4>Your Earnings</h4>
+                    </div>
                     <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div class="">
-                                <p class="mb-1 text-secondary">Bounce Rate</p>
-                                <h4 class="mb-0">48.32%</h4>
-                            </div>
-                            <div class="ms-auto">
-                                <p class="mb-0 font-13 text-success">+12.34 Increase</p>
-                                <p class="mb-0 font-13 text-secondary">From Last Week</p>
-                            </div>
+                        <div id="radialBars"></div>
+                        <div class="text-center mb-5">
+                            <h6>From last month</h6>
+                            <h1 class='text-green'>+$2,134</h1>
                         </div>
                     </div>
-                    <div id="chart12"></div>
                 </div>
-                <div class="card radius-10 overflow-hidden">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div class="">
-                                <p class="mb-1 text-secondary">Pageviews</p>
-                                <h4 class="mb-0">52.64%</h4>
-                            </div>
-                            <div class="ms-auto">
-                                <p class="mb-0 font-13 text-success">+21.34 Increase</p>
-                                <p class="mb-0 font-13 text-secondary">From Last Week</p>
-                            </div>
-                        </div>
+                <div class="card widget-todo">
+                    <div class="card-header border-bottom d-flex justify-content-between align-items-center">
+                        <h4 class="card-title d-flex">
+                            <i class='bx bx-check font-medium-5 pl-25 pr-75'></i>Progress
+                        </h4>
+
                     </div>
-                    <div id="chart13"></div>
-                </div>
-                <div class="card radius-10 overflow-hidden">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div class="">
-                                <p class="mb-1 text-secondary">New Sessions</p>
-                                <h4 class="mb-0">68.23%</h4>
-                            </div>
-                            <div class="ms-auto">
-                                <p class="mb-0 font-13 text-success">+18.42 Increase</p>
-                                <p class="mb-0 font-13 text-secondary">From Last Week</p>
-                            </div>
-                        </div>
+                    <div class="card-body px-0 py-1">
+                        <table class='table table-borderless'>
+                            <tr>
+                                <td class='col-3'>UI Design</td>
+                                <td class='col-6'>
+                                    <div class="progress progress-info">
+                                        <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="0"
+                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </td>
+                                <td class='col-3 text-center'>60%</td>
+                            </tr>
+                            <tr>
+                                <td class='col-3'>VueJS</td>
+                                <td class='col-6'>
+                                    <div class="progress progress-success">
+                                        <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="0"
+                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </td>
+                                <td class='col-3 text-center'>30%</td>
+                            </tr>
+                            <tr>
+                                <td class='col-3'>Laravel</td>
+                                <td class='col-6'>
+                                    <div class="progress progress-danger">
+                                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="0"
+                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </td>
+                                <td class='col-3 text-center'>50%</td>
+                            </tr>
+                            <tr>
+                                <td class='col-3'>ReactJS</td>
+                                <td class='col-6'>
+                                    <div class="progress progress-primary">
+                                        <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="0"
+                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </td>
+                                <td class='col-3 text-center'>80%</td>
+                            </tr>
+                            <tr>
+                                <td class='col-3'>Go</td>
+                                <td class='col-6'>
+                                    <div class="progress progress-secondary">
+                                        <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="0"
+                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </td>
+                                <td class='col-3 text-center'>65%</td>
+                            </tr>
+                        </table>
                     </div>
-                    <div id="chart14"></div>
                 </div>
             </div>
         </div>
-        <!--end row-->
-    </div>
+    </section>
 </div>
 
 @endsection
