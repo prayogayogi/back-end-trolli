@@ -1,17 +1,8 @@
-<!--plugins-->
-<link href="{{ asset("assets/plugins/simplebar/css/simplebar.css") }}" rel="stylesheet" />
-<link href="{{ asset("assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css") }}" rel="stylesheet" />
-<link href="{{ asset("assets/plugins/metismenu/css/metisMenu.min.css") }}" rel="stylesheet" />
-<link href="{{ asset("assets/plugins/datatable/css/dataTables.bootstrap5.min.css") }}" rel="stylesheet" />
-<!-- loader-->
-<link href="{{ asset("assets/css/pace.min.css") }}" rel="stylesheet" />
-<script src="{{ asset("assets/js/pace.min.js") }}"></script>
-<!-- Bootstrap CSS -->
-<link href="{{ asset("assets/css/bootstrap.min.css") }}" rel="stylesheet">
-<link href="{{ asset("assets/css/bootstrap-extended.css") }}" rel="stylesheet">
-<link href="{{ asset("assets/css/app.css") }}" rel="stylesheet">
-<link href="assets/css/icons.css" rel="stylesheet">
-<!-- Theme Style CSS -->
-<link rel="stylesheet" href="{{ asset("assets/css/dark-theme.css") }}" />
-<link rel="stylesheet" href="{{ asset("assets/css/semi-dark.css") }}" />
-<link rel="stylesheet" href="{{ asset("assets/css/header-colors.css") }}" />
+{{--Extend css--}}
+<link rel="shortcut icon" type="image/png" href="{{asset("assets/images/favicon.png")}}">
+<link href="{{ asset("assets/vendor/jquery-nice-select/css/nice-select.css") }}" rel="stylesheet">
+<link href="{{ asset("assets/vendor/owl-carousel/owl.carousel.css") }}" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset("assets/vendor/nouislider/nouislider.min.css") }}">
+
+<!-- Style css -->
+<link href="{{ asset("assets/css/style.css") }}" rel="stylesheet">

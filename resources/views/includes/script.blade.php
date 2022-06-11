@@ -1,14 +1,22 @@
-	<!-- Bootstrap JS -->
-	<script src="{{ asset("assets/js/bootstrap.bundle.min.js") }}"></script>
-	<!--plugins-->
-	<script src="{{ asset("assets/js/jquery.min.js") }}"></script>
-	<script src="{{ asset("assets/plugins/simplebar/js/simplebar.min.js") }}"></script>
-	<script src="{{ asset("assets/plugins/metismenu/js/metisMenu.min.js") }}"></script>
-	<script src="{{ asset("assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js") }}"></script>
-	<script src="{{ asset("assets/plugins/apexcharts-bundle/js/apexcharts.min.js") }}"></script>
-	<script src="{{ asset("assets/plugins/datatable/js/jquery.dataTables.min.js") }}"></script>
-	<script src="{{ asset("assets/plugins/datatable/js/dataTables.bootstrap5.min.js") }}"></script>
+{{--Include script--}}
+<!-- Required vendors -->
+<script src="{{ asset("assets/vendor/global/global.min.js") }}"></script>
+<script src="{{ asset("assets/vendor/chart.js/Chart.bundle.min.js") }}"></script>
+<script src="{{ asset("assets/vendor/jquery-nice-select/js/jquery.nice-select.min.js") }}"></script>
 
-	<script src="{{ asset("assets/js/index.js") }}"></script>
-	<!--app JS-->
-	<script src="{{ asset("assets/js/app.js") }}"></script>
+<!-- Apex Chart -->
+<script src="{{ asset("assets/vendor/apexchart/apexchart.js") }}"></script>
+
+<script src="{{ asset("assets/vendor/chart.js/Chart.bundle.min.js") }}"></script>
+
+<!-- Chart piety plugin files -->
+<script src="{{ asset("assets/vendor/peity/jquery.peity.min.js") }}"></script>
+<!-- Dashboard 1 -->
+<script src="{{ asset("assets/js/dashboard/dashboard-1.js") }}"></script>
+
+<script src="{{ asset("assets/vendor/owl-carousel/owl.carousel.js") }}"></script>
+
+<script src="{{ asset("asset/js/custom.min.js") }}"></script>
+<script src="{{ asset("assets/js/dlabnav-init.js") }}"></script>
+<script src="{{ asset("assets/js/demo.js") }}"></script>
+<script src="{{ asset("assets/js/styleSwitcher.js") }}"></script>
