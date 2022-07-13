@@ -1,11 +1,10 @@
 @extends('layouts.master')
 
 @section('title')
-    Product
+    Product Category
 @endsection
 
 @section('content')
-
 
 <div class="main-content container-fluid">
     <div class="page-title">
@@ -16,14 +15,14 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>All Product</h3>
-                <p class="text-subtitle text-muted">This product is a product that is in your shop, okay? <a href="{{ route("dashboard.index") }}"> Check it out</a>.</p>
+                <h3>All Product Category</h3>
+                <p class="text-subtitle text-muted">This product Category is a product that is in your shop, okay? <a href="{{ route("category.index") }}"> Check it out</a>.</p>
             </div>
             <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class='breadcrumb-header'>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route("dashboard.index") }}">Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Product</li>
+                        <li class="breadcrumb-item"><a href="{{ route("category.index") }}">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Product Category</li>
                     </ol>
                 </nav>
             </div>
@@ -32,36 +31,36 @@
     <section class="section">
         <div class="card">
             <div class="card-header">
-                <a href="{{ route("product.create") }}" class="btn btn-primary">Add Product</a>
+                <a href="{{ route("category.create") }}" class="btn btn-primary">Add Category</a>
             </div>
             <div class="card-body">
                 <table class='table table-striped' id="table1">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                            <th>Product</th>
-                            <th>Option</th>
+                            <th class="text-center">Name</th>
+                            <th class="text-center">Photo</th>
+                            <th class="text-center">Option</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($products as $product)
-                        <tr>
-                            <td>{{ $product->name }}</td>
-                            <td>{{ $product->type }}</td>
-                            <td>{{ $product->quantity }}</td>
-                            <td>Rp {{ number_format($product->price, 2, ',', '.') }}</td>
-                            <td>{{ $product->ProductCategory->name }}</td>
+                        @forelse ($categories as $category)
+                        <tr class="text-center">
+                            <td>{{ $category->name }}</td>
                             <td>
-                                <a href="{{ route("product.edit", $product->id) }}">
+                                @if ($category->photo)
+                                        <img src="{{ Storage::url($category->photo)}}" style="max-height:80px;"  />
+                                    @else
+                                        Foto Belum Tersedia
+                                @endif
+                            </td>
+                            <td>
+                                <a href="{{ route("category.edit", $category->id) }}">
                                     <span class="badge bg-success">Edit</span>
                                 </a>
-                                <a href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit()">
+                                <a href="#" onclick="event.preventDefault();document.getElementById('delete-form').submit()">
                                     <span class="badge bg-danger">Delete</span>
                                 </a>
-                                <form id="logout-form" action="{{ route("product.destroy", $product->id) }}" method="post" style="display: none">
+                                <form id="delete-form" action="{{ route("category.destroy", $category->id) }}" method="post" style="display: none">
                                     @method("DELETE")
                                     @csrf
                                 </form>

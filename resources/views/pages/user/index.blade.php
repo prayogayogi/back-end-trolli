@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Product
+    User Aplication
 @endsection
 
 @section('content')
@@ -16,14 +16,14 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>All Product</h3>
-                <p class="text-subtitle text-muted">This product is a product that is in your shop, okay? <a href="{{ route("dashboard.index") }}"> Check it out</a>.</p>
+                <h3>All User</h3>
+                <p class="text-subtitle text-muted">This User is a User that is in your shop, okay? <a href="{{ route("dashboard.index") }}"> Check it out</a>.</p>
             </div>
             <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class='breadcrumb-header'>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route("dashboard.index") }}">Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Product</li>
+                        <li class="breadcrumb-item active" aria-current="page">User</li>
                     </ol>
                 </nav>
             </div>
@@ -32,36 +32,34 @@
     <section class="section">
         <div class="card">
             <div class="card-header">
-                <a href="{{ route("product.create") }}" class="btn btn-primary">Add Product</a>
+                <a href="{{ route("user.create") }}" class="btn btn-primary">Add User</a>
             </div>
             <div class="card-body">
                 <table class='table table-striped' id="table1">
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Type</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                            <th>Product</th>
+                            <th>Email</th>
+                            <th>Name Store</th>
+                            <th>Role User</th>
                             <th>Option</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($products as $product)
+                        @forelse ($users as $user)
                         <tr>
-                            <td>{{ $product->name }}</td>
-                            <td>{{ $product->type }}</td>
-                            <td>{{ $product->quantity }}</td>
-                            <td>Rp {{ number_format($product->price, 2, ',', '.') }}</td>
-                            <td>{{ $product->ProductCategory->name }}</td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->store_name }}</td>
+                            <td>{{ $user->roles }}</td>
                             <td>
-                                <a href="{{ route("product.edit", $product->id) }}">
+                                <a href="{{ route("user.edit", $user->id) }}">
                                     <span class="badge bg-success">Edit</span>
                                 </a>
                                 <a href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit()">
                                     <span class="badge bg-danger">Delete</span>
                                 </a>
-                                <form id="logout-form" action="{{ route("product.destroy", $product->id) }}" method="post" style="display: none">
+                                <form id="logout-form" action="{{ route("user.destroy", $user->id) }}" method="post" style="display: none">
                                     @method("DELETE")
                                     @csrf
                                 </form>

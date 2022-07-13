@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\API\v1\Auth;
 
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-class UserController extends Controller
+class AuthenticateController extends Controller
 {
     // Register
     public function register(Request $request)
@@ -36,11 +36,11 @@ class UserController extends Controller
                 "access_token"  => $tokenResult,
                 "token_type"    => "Bearer",
                 "user"          => $user
-            ], "User Registred");
-        } catch (\Exception $exception) {
+            ], "User Registred", 201);
+        } catch (\Exception $err) {
             return ResponseFormatter::error([
                 "message" => "Something when wrong",
-                "error" => $exception,
+                "error" => $err,
             ], "Authentication", 500);
         }
     }
@@ -71,7 +71,7 @@ class UserController extends Controller
                 "access_token" => $tokenResult,
                 "token_type" => "Bearer",
                 "user" => $user
-            ], "Authenticated");
+            ], "Authenticated", 201);
         } catch (\Throwable $error) {
             return ResponseFormatter::error([
                 "message" => "Something when wrong",
@@ -83,7 +83,7 @@ class UserController extends Controller
     // Logout
     public function logout(Request $request)
     {
-        $token = $request->user()->currentAccessToken()->delete();
-        return ResponseFormatter::success($token, "Token revoked");
+        $request->user()->currentAccessToken()->delete();
+        return ResponseFormatter::success(null, "Logout Berhasil");
     }
 }

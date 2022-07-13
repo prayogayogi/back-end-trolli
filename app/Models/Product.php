@@ -21,18 +21,38 @@ class Product extends Model
         "heavy",
         "condition",
         "product_kategori_id",
+        'user_id',
         "description",
         "price",
         "quantity"
     ];
 
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'deleted_at',
+        'created_at',
+        'updated_at',
+    ];
+
     // Relasi ke product category
-    public function product_category(){
-        $this->belongsTo(ProductCategory::class, "product_kategori_id", "id");
+    public function ProductCategory()
+    {
+        return $this->belongsTo(ProductCategory::class, "product_kategori_id", "id");
     }
 
     // Relasi ke galleri product
-    public function galleri_product(){
-        $this->hasMany(GalleryProduct::class, "product_id", "id");
+    public function GalleryProduct()
+    {
+        return $this->hasMany(GalleriProduct::class, "product_id", "id");
+    }
+
+    // Relasi ke galleri product
+    public function User()
+    {
+        return $this->belongsTo(User::class);
     }
 }

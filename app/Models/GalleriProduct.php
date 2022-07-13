@@ -19,4 +19,15 @@ class GalleriProduct extends Model
         "product_id",
         "photo"
     ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'deleted_at',
+        'created_at',
+        'updated_at',
+    ];
 }

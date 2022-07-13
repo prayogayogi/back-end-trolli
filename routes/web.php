@@ -19,5 +19,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::resource("dashboard", "App\Http\Controllers\Dashboard\DashboardController");
+    Route::resource("category", "App\Http\Controllers\Dashboard\CategoryController");
     Route::resource("product", "App\Http\Controllers\Dashboard\ProductController");
+    Route::resource("user", "App\Http\Controllers\Dashboard\UserController");
 });

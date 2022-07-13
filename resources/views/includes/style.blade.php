@@ -4,4 +4,4 @@
 
 <link rel="stylesheet" href="{{ asset("assets/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.css") }}">
 <link rel="stylesheet" href="{{ asset("assets/dist/assets/css/app.css") }}">
-<link rel="shortcut icon" href="{{ asset("assets/dist/assets/images/favicon.svg") }}" type="image/x-icon">
+<link rel="shortcut icon" href="{{ asset("assets/dist/assets/images/favicon-16x16.png") }}" type="image/x-icon">
